@@ -17,7 +17,7 @@ import click
     "outfile",
 )
 
-def convert(infile, outfolder):
+def convert(infile, outfile):
 
     HTML_start = '<!DOCTYPE html>\n<html>\n<head>\n<title>' + title + '</title>\n</head>\n<body>\n' 
     HTML_end = '</body>\n</html>'
@@ -26,8 +26,7 @@ def convert(infile, outfolder):
     convert_file = open(infile, mode='r', encoding="utf-8")
     text = convert_file.read()
     html = markdown2.markdown(text)
-    output = open(output_file, "w+").write(HTML_start + html + HTML_end)
-
+    output = open("index.html", "w+").write(HTML_start + html + HTML_end)
 
 
 
