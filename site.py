@@ -17,18 +17,16 @@ import click
     "outfile",
 )
 
-def convert(file, outfolder):
-	
-	HTML_start = '<!DOCTYPE html>\n<html>\n<head>\n<title>' + title + '</title>\n</head>\n<body>\n' 
-	HTML_end = '</body>\n</html>'
-	file = imput_file
+def convert(infile, outfolder):
 
-    convert_file = open(file, mode='r', encoding="utf-8")
+    HTML_start = '<!DOCTYPE html>\n<html>\n<head>\n<title>' + title + '</title>\n</head>\n<body>\n' 
+    HTML_end = '</body>\n</html>'
+    file = infile
+
+    convert_file = open(infile, mode='r', encoding="utf-8")
     text = convert_file.read()
     html = markdown2.markdown(text)
     output = open(output_file, "w+").write(HTML_start + html + HTML_end)
-
-
 
 
 
